@@ -1,0 +1,15 @@
+{
+  "context": "client",
+  "identifier": "pa.service.mod",
+  "display_name": "PA Service Mod",
+  "description": "Official support mod for UI and other Client services. This mod is required for the game to function properly. Disabling this mod will break the game.",
+  "author": "PACC",
+  "version": "1.0.0",
+  "build": "124660",
+  "date": "2026-06-23",
+  "signature": "",
+  "forum": "",
+  "priority": 100,
+  "icon": "https://pachat.eu/Content/Logo.jpg",
+  "category": []
+}
