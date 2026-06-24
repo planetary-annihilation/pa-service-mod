@@ -1,6 +1,6 @@
 {
   "context": "client",
-  "identifier": "pa.service.mod_local",
+  "identifier": "pa.service.mod",
   "display_name": "PA Service Mod",
   "description": "Official support mod for UI and other Client services. This mod is required for the game to function properly. Disabling this mod will break the game.",
   "author": "PACC",
