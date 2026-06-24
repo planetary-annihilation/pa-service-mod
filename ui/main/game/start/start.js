@@ -2035,54 +2035,61 @@ $(document).ready(function ()
         });
         // ─────────────────────────────────────────────────────────────────────
 
+        // ===== FEATURED NEWS (local) — remove once the pa_update bucket carries this post =====
+        // Baked-in so the Galactic War Co-op update shows in the menu even though the remote
+        // feed (pa_update) hasn't been updated yet. Shown first; de-duped against the feed by url.
+        self.FEATURED_NEWS = [
+            {
+                title: 'Galactic War Co-op is here!',
+                url: 'https://store.steampowered.com/news/app/386070/view/672872850646892929',
+                timestamp: 1782340504,
+                content: `<img src="https://clan.steamstatic.com/images/9833776/cd2d49065a2df95a79de845bb70937d753334682.png" style="max-width:100%;height:auto;display:block;margin:0 0 0.6em;"><h2>Greetings Commanders!</h2><p>This is a big one. Galactic War — the roguelike campaign at the heart of Titans — has been a single-player experience since day one. Today that changes. You can now take on the galaxy <strong>together</strong>, with up to <strong>12 players*</strong> sharing a single campaign from the first landing to the final boss.</p><p>This update has been a long time coming, and one the community has asked for again and again. Thank you for sticking with us and for keeping Galactic War alive all these years. We can't wait to see your Omega battleships tear across the stars.</p><h2>One galaxy, one team</h2><ul><li><strong>Up to 12 players*</strong> in a single shared campaign.</li><li><strong>One shared galactic map</strong> — explore the same procedurally-generated galaxy together, with shared progression across every star system.</li><li><strong>Shared win/loss conditions</strong> — you take down the faction bosses as a team, and you live or die as a team.</li></ul><p><em>*player cap can be increased even further with the launch command <code>--local-server-max-players=64</code></em></p><h2>Play it your way</h2><p>Co-op ships with two control modes so you can run the campaign however your group likes:</p><ul><li><strong>Shared Control</strong> (default) — everyone commands the same army together. Perfect for coordinated, all-hands teamplay. As long as at least one Commander lives, all of you can control the battlefield.</li><li><strong>Separate Armies</strong> — each player fields their own allied army with its own color. Fight side by side, but command your own forces. If the host dies, everyone dies. If anyone else dies, only they lose while the fight continues.</li></ul><h2>Loadouts & tech, together or separate</h2><ul><li>Turn on <strong>Per-Player Tech</strong> for individual tech-card inventories: <strong>every player picks their own Commander, starting loadout, and tech cards</strong>.</li><li>Want everyone to run the same build? Leave it off and <strong>share a single tech inventory and loadout</strong> across the whole team.</li></ul><h2>The galaxy fights back even harder</h2><p>The enemy doesn't just sit there while you bring friends. The AI scales to match your team:</p><ul><li><strong>+20% AI economy per extra player</strong>, so a bigger team means a tougher fight.</li><li><strong>More enemy Commanders</strong> in each system to match the new players.</li><li>Running Per-Player Tech? Enemy scaling ramps up further to keep the challenge honest.</li></ul><p>Want to add friends without cranking the difficulty? Enable <strong>"Allow extra players later"</strong> to let people drop in without affecting the campaign's scaling.</p><h2>Drop in, drop out, keep going</h2><ul><li><strong>Reconnect support</strong> — got knocked offline? Jump back into the active campaign and pick up where you left off.</li><li><strong>Campaign persistence</strong> — your progress saves automatically and stays in sync across the whole team. Any player can become the host and resume with the same team, or a completely different one, all without losing progress!</li></ul><p><img src="https://clan.steamstatic.com/images/9833776/b48dcf06d044d365eb74485c70cba67b345b1ad1.gif" style="max-width:100%;height:auto;display:block;margin:0.6em auto;"></p><h2>How to start</h2><ul><li>Head into Galactic War and create a <strong>new campaign or load an old save</strong>.</li><li>Set your player count, choose your control mode, and toggle Per-Player Tech and extra-player options to taste.</li><li><strong>Host:</strong> use the <strong>Call for Reinforcements</strong> button on the galactic map to open the lobby.</li><li><strong>Friends:</strong> join via the server browser, pick your Commanders, and drop onto the first world together.</li></ul><p><img src="https://clan.steamstatic.com/images/9833776/533c830d309265c8444d0445be4dfc71c847c796.gif" style="max-width:100%;height:auto;display:block;margin:0.6em auto;"></p><h2>Your favorite mods, fully supported</h2><p>Co-op isn't just for the base campaign. Community favorites like <strong>Bigger Galactic War</strong> and <strong>Galactic War Overhaul</strong> are supported.</p><p><em>Note: all players need to have the same Galactic War mods to play together.</em></p><p><strong>Modders</strong>: add <code><em>"galacticWarMod": true</em></code> to modinfo.json to mark your mod as a Galactic War mod.</p><h2>Linux support marches on</h2><p>Additionally, we continue work on improving Linux support. We're very happy to announce that a significant number of native Linux distros can now once again run the game. While there are still some issues to iron out, we're grateful to the incredible Linux community for providing testing, logs, and an incredible amount of feedback. Without you, we could not have made it this far.</p><h2>Thank you</h2><p>The Community Commanders team has expanded significantly since our last Dev Diary, and we are genuinely overwhelmed by all of the support and enthusiasm for the game's future. Huge thanks to all of the volunteers who helped make this a reality. We really hope we can do justice by this incredible game and its even more incredible community. Special shoutout to the Community Commander <strong>Diruslupus</strong>, who headed this project. He built an ancient mod idea into a fully fledged feature, pouring countless hours into making sure every off-the-cuff remark became an actual feature.</p><p>This is by no means the end of our plans. We have a series of major updates in the works, including some major improvements to the system editor. Stay tuned, something dark lurks amongst the stars…
+
+<img src="https://clan.steamstatic.com/images/9833776/76d1bdaa5b5e40c9c58ff52ec79b5ff80951b24f.gif" style="max-width:100%;height:auto;display:block;margin:0.6em auto;"></p>`
+            }
+        ];
+        // ===== END FEATURED NEWS =====
+
         self.fetchNews = function()
         {
+            var buildItems = function (arr) {
+                return arr.map(function (news) {
+                    var ts = news.timestamp;
+                    if (ts && ts < 1e12) ts *= 1000;
+                    var tmp = document.createElement('div');
+                    tmp.innerHTML = news.content || '';
+                    var snippetText = (tmp.textContent || tmp.innerText || '').trim().replace(/\s+/g, ' ');
+                    return {
+                        title: news.title || '',
+                        url: news.url || '',
+                        date: new Date(ts).toDateString(),
+                        contentHtml: news.content || '',
+                        snippet: snippetText.length > 220 ? snippetText.slice(0, 220) + '…' : snippetText
+                    };
+                });
+            };
+            var applyFeed = function (data) {
+                var remote = _.isArray(data) ? data : [];
+                var featuredUrls = self.FEATURED_NEWS.map(function (f) { return f.url; });
+                remote = remote.filter(function (d) { return featuredUrls.indexOf(d.url) < 0; });
+                var combined = self.FEATURED_NEWS.concat(remote);
+                self.newsItems(buildItems(combined));
+                var news = combined[0];
+                if (news) {
+                    self.newsTitle(news.title);
+                    self.newsUrl(news.url);
+                    self.newsAuthor('PA');
+                    var ts = news.timestamp; if (ts && ts < 1e12) ts *= 1000;
+                    self.newsDate(new Date(ts).toDateString());
+                }
+                self.newsReady(true);
+            };
             $.ajax({
                 type: "GET",
                 url:  "https://storage.googleapis.com/public_pa_update_bucket/pa_update",
                 contentType: "application/json",
-                success: function (data, textStatus)
-                {
-                    if (data && _.isArray(data) && data.length)
-                    {
-                        // Populate the full article list
-                        var items = data.map(function (news) {
-                            var ts = news.timestamp;
-                            if (ts && ts < 1e12) ts *= 1000;
-                            var tmp = document.createElement('div');
-                            tmp.innerHTML = news.content || '';
-                            var snippetText = (tmp.textContent || tmp.innerText || '').trim().replace(/\s+/g, ' ');
-                            return {
-                                title: news.title || '',
-                                url: news.url || '',
-                                date: new Date(ts).toDateString(),
-                                contentHtml: news.content || '',
-                                snippet: snippetText.length > 220 ? snippetText.slice(0, 220) + '…' : snippetText
-                            };
-                        });
-                        self.newsItems(items);
-
-                        // Keep legacy single-item observables for backward compat
-                        var news = data[0];
-
-                        if (news)
-                        {
-                            self.newsTitle(news.title);
-                            self.newsUrl(news.url);
-                            self.newsAuthor('PA');
-
-                            var ts = news.timestamp;
-                            if (ts && ts < 1e12) ts *= 1000;
-                            self.newsDate(new Date(ts).toDateString());
-                        }
-                    }
-                    self.newsReady(true);
-                },
-                error: function ()
-                {
-                    console.error('fetchNews failed');
-                    self.newsReady(true);
-                }
+                success: function (data) { applyFeed(data); },
+                error: function () { console.error('fetchNews failed'); applyFeed([]); }
             });
         }
 
