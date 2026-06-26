@@ -127,19 +127,19 @@
             <!-- Social icons + quit: far right -->
             <div id="top-bar-right">
                 <div id="top-bar-social">
-                    <div class="social-btn btn_std_ix" data-bind="click: toggleLiveStreamsTab, click_sound: 'default', rollover_sound: 'default', css: { 'social-btn-active': showingLiveStreamsTab }, tooltip: '!LOC:Twitch Streams'" data-placement="bottom">
+                    <div class="social-btn btn_std_ix" data-bind="click: toggleLiveStreamsTab, click_sound: 'default', rollover_sound: 'default', css: { 'social-btn-active': showingLiveStreamsTab }, tooltip: '!LOC:Twitch Streams'" data-placement="bottom" data-container="body">
                         <img src="coui://ui/main/game/start/img/icon_twitch.png" />
                         <!-- ko if: liveStreamsCount -->
                         <div class="social-badge twitch-badge" data-bind="text: liveStreamsCount"></div>
                         <!-- /ko -->
                     </div>
-                    <div class="social-btn btn_std_ix" data-bind="click: toggleVideosTab, click_sound: 'default', rollover_sound: 'default', css: { 'social-btn-active': showingVideosTab }, tooltip: '!LOC:Community Videos'" data-placement="bottom">
+                    <div class="social-btn btn_std_ix" data-bind="click: toggleVideosTab, click_sound: 'default', rollover_sound: 'default', css: { 'social-btn-active': showingVideosTab }, tooltip: '!LOC:Community Videos'" data-placement="bottom" data-container="body">
                         <img src="coui://ui/main/game/start/img/icon_youtube.png" />
                     </div>
-                    <div class="social-btn btn_std_ix" data-bind="click: toggleLinksTab, click_sound: 'default', rollover_sound: 'default', css: { 'social-btn-active': showingLinksTab }, tooltip: '!LOC:Useful Links'" data-placement="bottom">
+                    <div class="social-btn btn_std_ix" data-bind="click: toggleLinksTab, click_sound: 'default', rollover_sound: 'default', css: { 'social-btn-active': showingLinksTab }, tooltip: '!LOC:Useful Links'" data-placement="bottom" data-container="body">
                         <img src="coui://ui/main/game/start/img/icon_leaderboard.png" />
                     </div>
-                    <div class="social-btn btn_std_ix" data-bind="click: openOfficialDiscord, click_sound: 'default', rollover_sound: 'default', tooltip: '!LOC:Join the official PA Discord'" data-placement="bottom">
+                    <div class="social-btn btn_std_ix" data-bind="click: openOfficialDiscord, click_sound: 'default', rollover_sound: 'default', tooltip: '!LOC:Join the official PA Discord'" data-placement="bottom" data-container="body">
                         <img src="coui://ui/main/game/start/img/icon_discord.png" />
                     </div>
                 </div>
