@@ -2139,7 +2139,7 @@ $(document).ready(function ()
                 endTime: '2026-07-04T21:00:00Z',   // ~midnight Sofia; adjust as needed
                 buttons: [
                     { label: 'Sign Up', url: 'https://discord.gg/dVFsFwcj5a' },
-                    { label: 'Watch', url: 'https://www.youtube.com/@nickmacneil4450/streams' }
+                    { label: 'Watch', url: 'https://www.youtube.com/@ZamokZamok235' }
                 ],
                 priority: 100
             }
@@ -2546,6 +2546,9 @@ console.log(JSON.stringify(self.reconnectToGameInfo()));
 
             self.gameHostname( reconnectToGameInfo.game_hostname );
             self.gamePort( reconnectToGameInfo.game_port );
+
+            var gameSteamId = ko.observable().extend({ session: 'game_steam_id' });
+            gameSteamId( reconnectToGameInfo.steam_id || '' );
 
             self.gameModIdentifiers( reconnectToGameInfo.mods );
 
