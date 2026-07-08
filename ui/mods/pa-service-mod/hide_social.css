@@ -10,10 +10,29 @@
    the contacts button that opens the widget must stay so the header is
    reachable. So keep .div-social-btn and .div-user-profile-container; hide the
    Friends/Recent tabs+panes and the Search Players box. */
-.div-social-widget .div-contacts-cont,   /* Friends + Recent tabs and panes */
-.div-social-widget .div-seach-cont,       /* Search Players input (sic: "seach") */
-.div-social-widget .div-search-results {  /* Search Players results popup */
+/* Hide the friends surfaces, but keep the outer contacts container visible as
+   an anchor for the PSA notice below. */
+.div-social-widget .div-tab-controls-cont,         /* Friends + Recent tab bar */
+.div-social-widget .div-contacts-cont.tab-content, /* Friends/Recent list panes */
+.div-social-widget .div-seach-cont,                /* Search Players input (sic: "seach") */
+.div-social-widget .div-search-results {           /* Search Players results popup */
     display: none !important;
+}
+
+/* PSA shown where the Friends/Recent tabs used to be, while the friends
+   service is offline. */
+.div-social-widget > .div-contacts-cont::before {
+    content: "The friends system is temporarily disabled while we migrate it to new servers, stay tuned";
+    display: block;
+    margin: 4px 2px 2px;
+    padding: 10px 12px;
+    font-size: 12px;
+    line-height: 1.45;
+    text-align: center;
+    color: #ffcf7a;
+    background: rgba(255, 207, 122, 0.08);
+    border: 1px solid rgba(255, 207, 122, 0.35);
+    border-radius: 3px;
 }
 
 /* PA Chat right-click player menu: friend / invite items that route through
