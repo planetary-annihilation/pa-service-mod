@@ -4,12 +4,17 @@
   "display_name": "PA Service Mod",
   "description": "Official support mod for UI and other Client services. This mod is required for the game to function properly. Disabling this mod will break the game.",
   "author": "PACC",
-  "version": "1.0.11",
+  "version": "1.0.12",
   "build": "124664",
-  "date": "2026-07-07",
+  "date": "2026-07-08",
   "signature": "",
   "forum": "",
   "priority": 100,
   "icon": "https://raw.githubusercontent.com/planetary-annihilation/pa-service-mod/refs/heads/main/badge_uber_vip.png",
-  "category": []
+  "category": [],
+  "scenes": {
+    "uberbar": [
+      "coui://ui/mods/pa-service-mod/hide_social.css"
+    ]
+  }
 }
