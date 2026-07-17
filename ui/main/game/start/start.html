@@ -77,9 +77,9 @@
                     </div>
                     <div class="top-nav-dropdown" style="display:none" data-bind="visible: showPlayMenu">
                         <div class="dropdown-section-label"><loc>ONLINE</loc></div>
-                        <div class="top-nav-sub-btn btn_std_ix" data-bind="click: navToServerBrowser, click_sound: 'default', rollover_sound: 'default'"><loc>Browse Games</loc></div>
-                        <div class="top-nav-sub-btn btn_std_ix" style="display:none" data-bind="visible: showRanked, click: startMatchMaking, click_sound: 'default', rollover_sound: 'default', css: { 'top-nav-disabled': disableRanked }"><loc>1v1 Ranked</loc></div>
-                        <div class="top-nav-sub-btn btn_std_ix" data-bind="click: navToAISkirmish, click_sound: 'default', rollover_sound: 'default'"><loc>Skirmish</loc></div>
+                        <div class="top-nav-sub-btn btn_std_ix" data-bind="click: navToServerBrowser, click_sound: 'default', rollover_sound: 'default'"><loc>Custom</loc></div>
+                        <div class="top-nav-sub-btn btn_std_ix" style="display:none" data-bind="visible: showRanked, click: startMatchMaking, click_sound: 'default', rollover_sound: 'default', css: { 'top-nav-disabled': disableRanked }"><loc>1v1 RANKED MATCH</loc></div>
+                        <div class="top-nav-sub-btn btn_std_ix" data-bind="click: navToAISkirmish, click_sound: 'default', rollover_sound: 'default'"><loc>AI Skirmish</loc></div>
                         <div class="dropdown-divider"></div>
                         <div class="dropdown-section-label"><loc>SINGLEPLAYER</loc></div>
                         <div class="top-nav-sub-btn btn_std_ix" data-bind="click: navToGalacticWar, click_sound: 'default', rollover_sound: 'default'"><loc>Galactic War</loc></div>
@@ -97,7 +97,7 @@
                         <div class="top-nav-sub-btn btn_std_ix" data-bind="click: navToReplayBrowser, click_sound: 'default', rollover_sound: 'default', css: { 'top-nav-disabled': !allowUbernetActions() }"><loc>Replays</loc></div>
                         <div class="top-nav-sub-btn btn_std_ix" data-bind="click: navToLeaderBoard, click_sound: 'default', rollover_sound: 'default'"><loc>Leaderboards</loc></div>
                         <!-- Reconnect if available -->
-                        <div class="top-nav-sub-btn btn_std_ix top-nav-reconnect" style="display:none" data-bind="visible: canDirectReconnect, click: directReconnect, click_sound: 'default', rollover_sound: 'default'"><loc>&#9654; Reconnect</loc></div>
+                        <div class="top-nav-sub-btn btn_std_ix top-nav-reconnect" style="display:none" data-bind="visible: canDirectReconnect, click: directReconnect, click_sound: 'default', rollover_sound: 'default'">&#9654; <loc>Reconnect</loc></div>
                     </div>
                 </div>
 
