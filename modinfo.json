@@ -2,7 +2,7 @@
   "context": "client",
   "identifier": "pa.service.mod",
   "display_name": "PA Service Mod",
-  "description": "Official support mod used to deliver urgent client-side fixes between game builds. Leave this mod enabled so you receive hotfixes as soon as they ship.",
+  "description": "Official support mod for UI and other Client services. This mod is required for the game to function properly. Disabling this mod will break the game.",
   "author": "PACC",
   "version": "1.1.0",
   "build": "124667",
