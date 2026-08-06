@@ -1,0 +1,44 @@
+<img src="coui://ui/mods/pa-service-mod/img/news_transport_banner.png" style="max-width:100%;height:auto;display:block;margin:0 0 0.6em;">
+<h2>Galactic War Co-op Hotfix 2</h2>
+<p>We've been hard at work addressing more of your feedback on Co-op Galactic War, along with a couple of long-standing bug fixes. Here's what's new:</p>
+<h3>Co-op Galactic War:</h3>
+<ul>
+  <li><strong>Persistent titles & passwords</strong>: Saves now remember the most recent lobby title and password. No more retyping the same details every time you boot up the same campaign!</li>
+  <li>Fixed an issue where opening a campaign to Co-op for the first time with separate Tech enabled could wipe the host's inventory.</li>
+  <li>Fixed a minor display bug where some Galactic War server beacons showed raw <strong>!LOC:</strong> text as part of the system name.</li>
+</ul>
+<h3>Bug Fixes</h3>
+<ul>
+  <li>Resolved a common effect-related crash frequently seen when reconnecting to a modded game.</li>
+  <li>Fixed a common issue where players would get stuck on <strong>"Loading Mods"</strong> when launching the game.</li>
+</ul>
+<h3>Quality of Life</h3>
+<ul>
+  <li><strong>Persistent wreckage</strong>: Once spotted, wreckage now stays visible in the fog of war instead of vanishing when you lose line of sight.</li>
+</ul>
+<h3>For Modders</h3>
+<ul>
+  <li><strong>Multi-bone transporters</strong>: Transporters can now define an array of attachment bones. If a transport carries multiple units, each unit can be attached to its own unique bone instead of all hooking onto the same one.</li>
+  <li>You can now specify a default title for Galactic War campaigns instead of "GW Co-op Campaign": When touching the gw_play scene, mods can make use of <em>setDefaultGwCoopLobbyTitle(string)</em>.</li>
+</ul>
+<h3>Known Issues</h3>
+<ul>
+  <li>The Friends system is offline while we build a replacement — stay tuned!</li>
+  <li>The "comm bug": commanders occasionally spawn without vision of any units, including your own commander.</li>
+  <li>PA Chat is near capacity and can be unreliable right now.</li>
+  <li>The build bar can appear in the wrong place, or not at all, when selecting units — a fix is planned for the next release.</li>
+  <li>The UI can occasionally lag or hang.</li>
+  <li>The game can appear to run while the simulation has actually stopped. If this happens, set <strong>Settings → Server → Local Server Multi-Threading</strong> to <strong>OFF</strong>.</li>
+</ul>
+<h3>Co-Op GW Known Issues</h3>
+<ul>
+  <li>The client and server galactic map can briefly fall out of sync — this is purely visual.</li>
+  <li>Clients sometimes fail to automatically rejoin a Galactic War session when continuing the war. Work is ongoing.</li>
+</ul>
+<h3>OS-Specific Issues</h3>
+<ul>
+  <li><strong>Linux:</strong> occasional 'cilantro' error code on the native port.</li>
+  <li><strong>Windows:</strong> Smart App Control can block the server executable — disable it, or add your PA install folder to Windows Defender's exclusions, to work around it.</li>
+</ul>
+<p>Keep on reporting bugs and suggesting improvements! We truly appreciate your feedback, as most of our fixes start off as a report from you in the Discord.</p>
+<p><em>~ The Community Commanders</em></p>
