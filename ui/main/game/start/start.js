@@ -5,19 +5,18 @@ $(document).ready(function ()
     engine.call('game.debug.menuDocumentReady');
 
     // the check 'data_storage_model'
-    if (!localStorage['data_storage_model'] || localStorage['data_storage_model'] != '2.0') {
+    if (localStorage['data_storage_model'] != '2.0') {
 
-        if (localStorage['data_storage_model'] != '1.0')
-            localStorage.clear();
-        else
+        /* a missing marker is not proof of a legacy store — it also happens when the
+           marker alone is lost — so migrate known formats and never wipe wholesale */
+        if (localStorage['data_storage_model'] == '1.0')
             cleanupLegacyStorage();
 
         localStorage['data_storage_model'] = '2.0';
     }
-    if (!localStorage['planet_storage_model'] || localStorage['planet_storage_model'] != '1.0') {
-        //clear old format
-        localStorage.setItem('planets', encode([]));
-        delete localStorage.systems;
+    if (localStorage['planet_storage_model'] != '1.0') {
+        if (!localStorage['planets'])
+            localStorage.setItem('planets', encode([]));
         localStorage.setItem('planet_storage_model', '1.0');
     }
 
