@@ -15,6 +15,12 @@
   "scenes": {
     "uberbar": [
       "coui://ui/mods/pa-service-mod/hide_social.css"
+    ],
+    "start": [
+      "coui://ui/mods/pa-service-mod/map_recovery.js"
+    ],
+    "load_planet": [
+      "coui://ui/mods/pa-service-mod/map_recovery.js"
     ]
   }
 }
