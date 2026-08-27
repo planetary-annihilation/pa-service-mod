@@ -4,9 +4,9 @@
   "display_name": "PA Service Mod",
   "description": "Official support mod for UI and other Client services. This mod is required for the game to function properly. Disabling this mod will break the game.",
   "author": "PACC",
-  "version": "1.0.2",
+  "version": "1.0.20",
   "build": "124667",
-  "date": "2026-08-24",
+  "date": "2026-08-26",
   "signature": "",
   "forum": "",
   "priority": 100,
@@ -15,6 +15,12 @@
   "scenes": {
     "uberbar": [
       "coui://ui/mods/pa-service-mod/hide_social.css"
+    ],
+    "start": [
+      "coui://ui/mods/pa-service-mod/map_recovery.js"
+    ],
+    "load_planet": [
+      "coui://ui/mods/pa-service-mod/map_recovery.js"
     ]
   }
 }
