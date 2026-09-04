@@ -12,9 +12,5 @@
   "priority": 100,
   "icon": "https://raw.githubusercontent.com/planetary-annihilation/pa-service-mod/refs/heads/main/badge_uber_vip.png",
   "category": [],
-  "scenes": {
-    "uberbar": [
-      "coui://ui/mods/pa-service-mod/hide_social.css"
-    ]
-  }
+  "scenes": {}
 }
