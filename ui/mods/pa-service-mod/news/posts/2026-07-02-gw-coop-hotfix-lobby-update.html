@@ -1,0 +1,49 @@
+<h2>GW Co-op - Hotfix & Lobby Update</h2>
+<p><strong>Greetings Commanders!</strong></p>
+<p>Thank you for the incredible response to the Galactic War Co-op launch. You jumped into the fight together in numbers we didn't expect, (and frankly struggled to handle!) and you sent us a mountain of feedback, logs, and bug reports along the way. This hotfix addresses some of the more urgent ones and brings some brand new QoL improvements to the multiplayer lobby experience plus a number of Co-op improvements.</p>
+<p><strong>A quick note on UI lag:</strong> we're aware that some players have been running into UI lag, and we're actively looking into it. The causes can vary from system to system, but some players have reported relief by <strong>turning off multithreading</strong> or <strong>running the game with hardware acceleration disabled</strong>. Hop into the official Discord for updates and per-system support — we're on it.</p>
+<hr>
+<h2>A better lobby</h2>
+<p>We've added three new lobby tools to make setting up a game less of a chore:</p>
+<ul>
+  <li><strong>Auto-start</strong> — kick off the match automatically once everyone's ready.
+  <img src="coui://ui/mods/pa-service-mod/img/news_auto_start.png" style="max-width:100%;height:auto;display:block;margin:0.5em auto 0.2em;"></li>
+  <li><strong>Ping AFK</strong> — send a sound alert and taskbar notification to <em>only</em> the players who've wandered off, instead of blasting the whole lobby.
+  <img src="coui://ui/mods/pa-service-mod/img/news_ping_afk.png" style="max-width:100%;height:auto;display:block;margin:0.5em auto 0.2em;"></li>
+  <li><strong>Make Host</strong> — hand host privileges over to another player without leaving the lobby.
+  <img src="coui://ui/mods/pa-service-mod/img/news_make_host.png" style="max-width:100%;height:auto;display:block;margin:0.5em auto 0.2em;"></li>
+</ul>
+<p>We've also reworked the <strong>unready rules</strong> so the lobby stops resetting after every change. From now on:</p>
+<ul>
+  <li>Most actions that used to unready <em>everyone</em> — like adding or removing slots and teams — no longer do.</li>
+  <li>Moving or swapping players only unreadies the players involved.</li>
+  <li>Swapping the system won't unready anyone.</li>
+  <li>Changing game rules or eco modifiers still unreadies everyone, since those affect the whole match.</li>
+</ul>
+<p>Finally, we've renamed the <strong>Quick Host</strong> drop-down button to <strong>Skirmish</strong> to make it clearer what it does.</p>
+<hr>
+<h2>Galactic War Co-op — fixes & polish</h2>
+<p><strong>Fixes</strong></p>
+<ul>
+  <li>Fixed a race condition that could corrupt inventory data, leaving players with empty inventories the first time they opened a campaign to Co-op.</li>
+  <li>All empty slots must now be filled or removed before a battle can be launched from the galactic map. This closes a rare window where a player could join <em>after</em> the battle had already started loading.</li>
+</ul>
+<p><strong>Quality of life</strong></p>
+<ul>
+  <li><strong>Continue War</strong> now reopens as many slots as were open when you started the battle.</li>
+  <li>Co-op players can now see the <strong>Continue War</strong> button — clicking it shows "Awaiting host" so everyone understands the flow instead of wondering why nothing's happening.</li>
+  <li>Co-op players are no longer treated as subcommanders for defeat detection. Unless Sudden Death is on, the host dying will no longer wipe out the whole team.</li>
+  <li>The <strong>Dismiss Tech</strong> and tech-choice rows are back for Co-op players on shared tech — on the Co-op side they now read "Host Choosing Tech" so it's obvious why the buttons aren't available.</li>
+  <li>Removed the misleading friends-visibility option, since the friend list is currently non-functional.</li>
+</ul>
+<hr>
+<h2>For the modders</h2>
+<ul>
+  <li><strong>Mods in Co-op</strong> — we've added the infrastructure to support mods in Co-op. Galactic War mods now have a mechanism to synchronize any game-state changes to every connected client.</li>
+  <li>The mod-mismatch warning screen now reads the new <strong>galacticWarMod: true</strong> field from your <em>modinfo.json</em>. Players can no longer bypass the mismatch screen when a mismatch is detected — everyone plays on the same page.</li>
+  <li>The server beacon now reports active Galactic War mods, the same way it reports server mods.</li>
+</ul>
+<hr>
+<h3>Thank you</h3>
+<p>Every fix in this list started as a bug report, a log file, or a "hey, this feels off" in the Discord. Keep it coming — Co-op and PA as a whole are only going to get better from here. Stay tuned for some exciting intel soon…</p>
+<p><em>— The Community Commanders</em></p>
