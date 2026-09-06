@@ -1,0 +1,22 @@
+[
+    {
+        "enabled": true,
+        "title": "Lemon's 2v2 Summer tourney",
+        "subtitle": "Machina and Legion factions",
+        "description": "Join the upcoming 2v2 tournament - all skill levels welcome. Sign up and join the Discord to get involved!",
+        "image": "coui://ui/mods/pa-service-mod/img/event_placeholder.jpg",
+        "startTime": "2026-07-04T14:00:00Z",
+        "endTime": "2026-07-04T21:00:00Z",
+        "buttons": [
+            {
+                "label": "Sign Up",
+                "url": "https://discord.gg/dVFsFwcj5a"
+            },
+            {
+                "label": "Watch",
+                "url": "https://www.youtube.com/@ZamokZamok235"
+            }
+        ],
+        "priority": 100
+    }
+]
