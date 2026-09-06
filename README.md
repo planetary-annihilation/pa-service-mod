@@ -15,6 +15,16 @@ Anything that is not that belongs in the base game. Code that lives here is invi
 anyone reading the base game, silently shadows base files, and makes every later change to
 those files harder and more surprising to whoever makes it.
 
+That rules out new functionality, and it equally rules out **using this mod to get a
+non-emergency change out sooner**. A real bug fix that players are not urgently blocked on
+is still a base game change, and it waits for a game build like everything else. So is a
+small improvement, a tweak, or a fix that is simply ready before the next build is. "It
+works and it is faster this way" is not the bar — the bar is that waiting is unacceptable.
+
+The speed is not a shortcut to be spent whenever it is convenient. Every change shipped
+here is one more base game file quietly shadowed for every player, and the cost of that
+lands on whoever touches those files next.
+
 **The one standing exception is news and events** (see below). These are content, not code,
 and shipping a post without a game build is the same fast-deployment argument that justifies
 this mod existing at all.
